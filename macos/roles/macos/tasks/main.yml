@@ -1,0 +1,10 @@
+# macos role
+
+---
+
+- name: 'macOS: dock is hidden'
+  osx_defaults:
+    domain: 'com.apple.dock'
+    key: autohide
+    value: true
+

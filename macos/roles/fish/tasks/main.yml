@@ -1,0 +1,9 @@
+# fish role
+
+---
+
+- name: Fish shell by default
+  become: true
+  user:
+    name: "{{ ansible_env.USER }}"
+    shell: '/usr/local/bin/fish'

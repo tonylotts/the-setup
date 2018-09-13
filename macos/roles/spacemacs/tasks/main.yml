@@ -1,0 +1,16 @@
+# spacemacs role
+
+---
+
+- name: Spacemacs presence
+  git:
+    repo: 'https://github.com/syl20bnr/spacemacs'
+    dest: '~/.emacs.d'
+    version: '9865e773'
+
+- name: Spacemacs configuration presence
+  file:
+    state: link
+    src: "{{ role_path }}/files/.spacemacs"
+    dest: '~/.spacemacs'
+  

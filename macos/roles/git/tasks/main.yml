@@ -1,0 +1,15 @@
+# git role
+
+---
+
+- name: 'Git configuration: push current branch by default'
+  git_config:
+    name: 'remote.origin.push'
+    scope: 'global'
+    value: HEAD
+
+- name: 'Git configuration: emacs as editor'
+  git_config:
+    name: 'core.editor'
+    scope: 'global'
+    value: 'open -a Emacs'

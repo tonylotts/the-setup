@@ -1,0 +1,26 @@
+#!/usr/bin/env ansible-playbook --ask-become-pass
+
+---
+
+- hosts: localhost
+  roles:
+    - role: geerlingguy.homebrew
+      vars:
+        homebrew_taps:
+        - homebrew/cask-fonts
+        - railwaycat/emacsmacport
+        homebrew_apps:
+        - fish
+        - git
+        - scalastyle
+        homebrew_cask_apps:
+        - alfred
+        - amethyst
+        - dash
+        - docker
+        - emacs-mac
+        - font-source-code-pro
+    - fish
+    - git
+    - macos
+    - spacemacs
