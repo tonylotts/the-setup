@@ -7,3 +7,9 @@
   user:
     name: "{{ ansible_env.USER }}"
     shell: '/usr/local/bin/fish'
+
+- name: Fish configuration
+  file:
+    state: link
+    src: "{{ role_path }}/files/.config"
+    dest: '~/.config'
