@@ -8,8 +8,21 @@
     name: "{{ ansible_env.USER }}"
     shell: '/usr/local/bin/fish'
 
-- name: Fish configuration
+- name: Fish function directory presence
+  file:
+    state: directory
+    dest: "{{ functions_path }}"
+
+- name: find Fish function files
+  find:
+    paths: "{{ role_path }}/files/functions/"
+    patterns: '*.fish'
+    recurse: no
+  register: fish_functions
+
+- name: Fish functions
   file:
     state: link
-    src: "{{ role_path }}/files/.config"
-    dest: '~/.config'
+    src: "{{ item.path }}"
+    dest: "{{ functions_path }}/{{ item.path | basename }}"
+  with_items: "{{ fish_functions.files }}"

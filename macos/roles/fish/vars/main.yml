@@ -1,0 +1,4 @@
+# fish role vars
+
+---
+functions_path: "~/.config/fish/functions/"
